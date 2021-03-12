@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is a portfolio
+> This repo is a next.js app intend to serve as an online resume, take a [look](https://kave.me) at it.
 
-## Getting Started
+The website is available at [https://kave.me](https://kave.me), it has been made of the following technologies:
+* [Next.js](https://nextjs.org)
+* [Graphql](https://graphql.org)
+* [Nexus.js](https://nexusjs.org)
+* [Anime.js](https://animejs.com)
+* [Material UI](https://material-ui.com)
 
-First, run the development server:
+![Twitter Follow](https://img.shields.io/twitter/follow/kave_me?style=social)
+![GitHub followers](https://img.shields.io/github/followers/kave-me?style=social)
+[LinkedIn](https://www.linkedin.com/in/kavemohammadi)
 
-```bash
-npm run dev
-# or
+
+![](portfolio.png)
+
+## Usage example
+
+If you are interested to use it as your online resume please fork it on github and change `config.json` according to your need.
+
+## Development setup
+
+After making a fork of this repo run the following commands and enjoy hacking 🤓
+
+```sh
+vim config.json # place your information in the file
+yarn install
+yarn makeReadme
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Release History
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+* 0.0.1
+    * add README.md
+    * add config.json
+    * add makeReadme.sh
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Meta
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Kave Mohammadi – [@kave_me](https://twitter.com/kave_me) – kave.mdi@gmail.com
 
-## Learn More
+Distributed under the MIT license. See ``LICENSE`` for more information.
 
-To learn more about Next.js, take a look at the following resources:
+[https://github.com/kave-me](https://github.com/kave-me)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
