@@ -35,7 +35,9 @@ yarn dev
 * 0.0.1
     * add README.md
     * add config.json
-    * add makeReadme.sh
+    * add makeReadme script
+    * add prettier configuration
+    * add graphql api
 
 ## Meta
 
