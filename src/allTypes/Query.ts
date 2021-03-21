@@ -11,6 +11,7 @@ export const Query = queryType({
         });
 
         t.list.string('skills', {
+            description: 'Get all the skills',
             resolve: () => data.skills
         });
 
