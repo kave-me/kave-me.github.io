@@ -47,6 +47,8 @@ ${config.fullName} – [@${config.twitterHandle}](https://twitter.com/${config.t
 
 Distributed under the MIT license. See \`\`LICENSE\`\` for more information.
 
-[https://github.com/${config.githubHandle}](https://github.com/${config.githubHandle})`
+[https://github.com/${config.githubHandle}](https://github.com/${config.githubHandle})`;
 
-fs.writeFile('../README.md', readme, (err => err ? console.error(err) : console.log('README.md created')));
+fs.writeFile('../README.md', readme, (err) =>
+  err ? console.error(err) : console.log('README.md created')
+);

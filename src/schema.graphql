@@ -1,0 +1,50 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: Query
+}
+
+type Bio {
+  email: String
+  github: String
+  linkedin: String
+  name: String
+  objective: String
+  tagline: String
+  website: String
+}
+
+type Position {
+  employmentType: String
+  endDate: String
+  id: ID
+  linkedin: String
+  location: String
+  startDate: String
+  title: String
+  website: String
+}
+
+type Project {
+  github: String
+  id: ID
+  linkedin: String
+  objective: String
+  title: String
+  website: String
+}
+
+type Query {
+  "Get Biography information"
+  bio: Bio
+  "Find a position by it's id"
+  position(id: Int): Position
+  "Get all the positions"
+  positions: [Position]
+  "Find a project by it's id"
+  project(id: Int): Project
+  "Get all the projects"
+  projects: [Project]
+  "Get all the skills"
+  skills: [String]
+}
