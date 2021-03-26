@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import ReactLoading from 'react-loading';
+import Button from '@material-ui/core/Button';
 import { useQuery, gql } from '@apollo/client';
 
 export default function Home() {
@@ -50,6 +51,10 @@ export default function Home() {
       <Head>
         <title>{'title'}</title>
       </Head>
+
+      <Button variant="contained" color="primary">
+        Hello World
+      </Button>
       <h1> Resume </h1>
       <pre> {JSON.stringify(data, null, 2)}</pre>
     </>
