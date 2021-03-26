@@ -2,8 +2,17 @@ import Head from 'next/head';
 import ReactLoading from 'react-loading';
 import Button from '@material-ui/core/Button';
 import { useQuery, gql } from '@apollo/client';
+import { makeStyles, Box, Container, Paper, Typography } from '@material-ui/core';
+
+const useStyles = makeStyles((theme) => ({
+  caption: {
+    margin: 'auto'
+  }
+}));
 
 export default function Home() {
+  const styles = useStyles();
+
   const BioQuery = gql`
     query KaveMohammadi {
       bio {
@@ -52,11 +61,25 @@ export default function Home() {
         <title>{'title'}</title>
       </Head>
 
-      <Button variant="contained" color="primary">
-        Hello World
-      </Button>
-      <h1> Resume </h1>
-      <pre> {JSON.stringify(data, null, 2)}</pre>
+      <Container>
+        <Box className={styles.caption}>
+          <Typography variant={'h3'} component={'h1'}>
+            Frontend developer
+          </Typography>
+          <Typography paragraph={true} variant={'body1'}>
+            I’ve worked as a systems analyst since I graduated from college. I am very particular
+            about the details of my work, but I also like to stay open-minded to new ideas. I never
+            want to close myself off to other people’s opinions.
+          </Typography>
+          <Button variant="contained" color="primary">
+            More about me
+          </Button>
+        </Box>
+        <Paper>
+          <pre> {JSON.stringify(data, null, 2)}</pre>
+        </Paper>
+      </Container>
+      {/*<h1> Resume </h1>*/}
     </>
   );
 }

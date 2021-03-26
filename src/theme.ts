@@ -5,8 +5,10 @@ import { blueGrey, green, indigo, red } from '@material-ui/core/colors';
 const theme = {
   light: createMuiTheme({
     palette: {
+      type: 'light',
       primary: {
-        main: green[600]
+        main: green[600],
+        contrastText: blueGrey[900]
       },
       secondary: {
         main: indigo[700]
@@ -21,8 +23,10 @@ const theme = {
   }),
   dark: createMuiTheme({
     palette: {
+      type: 'dark',
       primary: {
-        main: green[600]
+        main: green[600],
+        contrastText: blueGrey[50]
       },
       secondary: {
         main: indigo[700]
