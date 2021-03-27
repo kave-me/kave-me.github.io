@@ -106,6 +106,7 @@ export default function Home() {
       <Container disableGutters={true} component={'main'}>
         <AppBar position="static" color={'transparent'} elevation={0}>
           <Toolbar className={styles.toolbar}>
+            {/* TODO: add tooltip to Icons*/}
             <IconButton className={styles.socialMediaIcon} size={'small'} color="default">
               <GitHubIcon />
             </IconButton>
@@ -135,7 +136,7 @@ export default function Home() {
               variant={'body1'}
               component={'h2'}>
               I am a web developer, I started doing web development since 2017 as a hobby but my
-              career as a developer started at early 2020.
+              career as a developer started six month after that as a freelancer.
               <br />
               Web development is my art. Whether it’s preparing a complex web base game or a simple
               landing page, I always put my heart and soul into my work.
