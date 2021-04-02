@@ -25,9 +25,7 @@ If you are interested to use it as your online resume please fork it on github a
 After making a fork of this repo run the following commands and enjoy hacking 🤓
 
 ```sh
-vim config.ts # place your information in the file
 yarn install
-yarn makeReadme
 yarn dev
 ```
 
