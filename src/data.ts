@@ -3,9 +3,10 @@ export const data = {
     name: 'Kave Mohammadi',
     tagline: 'Frontend developer',
     email: 'kave.mdi@gmail.com',
-    github: '',
-    website: '',
-    linkedin: '',
+    github: 'https://github.com/kave-me',
+    resume: 'https://kave.me/resume',
+    twitter: 'https://twitter.com/kave_me',
+    linkedin: 'https://www.linkedin.com/in/kavemohammadi',
     objective: ''
   },
   skills: ['React.js', 'Next.js'],
