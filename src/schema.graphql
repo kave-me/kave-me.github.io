@@ -8,10 +8,11 @@ type Bio {
   email: String
   github: String
   linkedin: String
+  twitter: String
   name: String
-  objective: String
   tagline: String
-  website: String
+  resume: String
+  objective: String
 }
 
 type Position {
@@ -34,6 +35,10 @@ type Project {
   website: String
 }
 
+type Theme {
+  isDark: Boolean
+}
+
 type Query {
   "Get Biography information"
   bio: Bio
@@ -47,4 +52,5 @@ type Query {
   projects: [Project]
   "Get all the skills"
   skills: [String]
+  useTheme : Theme
 }
