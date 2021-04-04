@@ -1,14 +1,10 @@
-import { Container } from '@material-ui/core';
 import HomePage from '../src/components/home';
-import GetHead from '../src/components/utils/GetHead';
+import PageLayout from '../src/components/PageLayout';
 
 export default function Home() {
   return (
-    <>
-      <GetHead keyWord={'Frontend developer'} />
-      <Container disableGutters={true} component={'main'}>
-        <HomePage />
-      </Container>
-    </>
+    <PageLayout>
+      <HomePage />
+    </PageLayout>
   );
 }

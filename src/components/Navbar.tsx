@@ -25,7 +25,8 @@ import { useState } from 'react';
 
 const useStyles = makeStyles((theme) => ({
   toolbar: {
-    padding: theme.spacing(0, 8),
+    // up right bottom left
+    padding: theme.spacing(2, 1, 0, 1),
     display: 'flex',
     justifyContent: 'space-between'
   },
@@ -61,15 +62,15 @@ const Navbar = ({
         <Toolbar className={styles.toolbar}>
           <Tooltip title="Github" aria-label="Github">
             <Link rel={'noopener noreferrer'} href={githubUrl} target={'_blank'}>
-              <IconButton size={'medium'} color="default">
-                <GitHubIcon />
+              <IconButton color="default">
+                <GitHubIcon fontSize={'large'} />
               </IconButton>
             </Link>
           </Tooltip>
 
           <Tooltip title="Open menu" aria-label="menu">
-            <IconButton size={'medium'} color="default" onClick={toggleDrawer}>
-              <MenuIcon />
+            <IconButton color="default" onClick={toggleDrawer}>
+              <MenuIcon fontSize={'large'} />
             </IconButton>
           </Tooltip>
         </Toolbar>
