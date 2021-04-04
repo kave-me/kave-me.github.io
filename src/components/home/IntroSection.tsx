@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     height: '94vh',
     justifyItems: 'stretch',
+    justifyContent: 'center',
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row-reverse',
       padding: theme.spacing(0, 4),

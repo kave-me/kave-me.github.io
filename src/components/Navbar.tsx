@@ -13,7 +13,8 @@ import {
   ListItemText,
   Divider,
   ListSubheader,
-  Typography
+  Typography,
+  Box
 } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -30,8 +31,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between'
   },
+
+  drawer: {
+    display: 'flex'
+  },
+  drawerBox: {
+    [theme.breakpoints.down('sm')]: {
+      width: '70vw'
+    }
+  },
   switchTheme: {
-    margin: '0 auto'
+    marginLeft: '130px'
   },
   smDivider: {
     marginTop: 'auto'
@@ -75,73 +85,79 @@ const Navbar = ({
           </Tooltip>
         </Toolbar>
 
-        <Drawer anchor={'right'} open={isDrawerOpen} onClose={toggleDrawer}>
-          <Tooltip title="Toggle useTheme mode" aria-label="Theme mode">
-            <Switch
-              className={styles.switchTheme}
-              onChange={() => switchTheme()}
-              color="primary"
-              name="switchTheme"
-              inputProps={{ 'aria-label': 'primary checkbox' }}
-            />
-          </Tooltip>
-          <Divider />
-          <List>
-            <ListItem button>
-              <ListItemText
-                primary={'Blog'}
-                secondary={'My dev journey'}
-                secondaryTypographyProps={{ variant: 'caption' }}
-                primaryTypographyProps={{ variant: 'body2' }}
+        <Drawer
+          className={styles.drawer}
+          anchor={'right'}
+          open={isDrawerOpen}
+          onClose={toggleDrawer}>
+          <Box className={styles.drawerBox}>
+            <Tooltip title="Toggle useTheme mode" aria-label="Theme mode">
+              <Switch
+                className={styles.switchTheme}
+                onChange={() => switchTheme()}
+                color="primary"
+                name="switchTheme"
+                inputProps={{ 'aria-label': 'primary checkbox' }}
               />
-            </ListItem>
-            <ListItem button>
-              <ListItemText
-                primary={'Projects'}
-                secondary={'Showcases are here'}
-                secondaryTypographyProps={{ variant: 'caption' }}
-                primaryTypographyProps={{ variant: 'body2' }}
-              />
-            </ListItem>
-            <ListItem button>
-              <ListItemText
-                primary={'About me'}
-                secondary={'Who am I?'}
-                secondaryTypographyProps={{ variant: 'caption' }}
-                primaryTypographyProps={{ variant: 'body2' }}
-              />
-            </ListItem>
-          </List>
-          <Divider className={styles.smDivider} />
-          <List>
-            <ListSubheader>
-              <Typography variant={'h6'}> {`Keep in touch`}</Typography>
-            </ListSubheader>
-            {[
-              { name: 'GitHub', link: githubUrl, icon: GitHubIcon },
-              { name: 'LinkedIn', link: linkedinUrl, icon: LinkedInIcon },
-              { name: 'Twitter', link: twitterUrl, icon: TwitterIcon },
-              { name: 'Resume', link: resumeUrl, icon: CloudDownloadIcon }
-            ].map((sm, i) => (
-              <Link
-                color={'textPrimary'}
-                key={i}
-                rel={'noopener noreferrer'}
-                href={sm.link}
-                target={'_blank'}>
-                <ListItem button>
-                  <ListItemIcon>
-                    <Tooltip title={sm.name} aria-label={sm.name}>
-                      <IconButton size={'small'} color="default">
-                        {<sm.icon />}
-                      </IconButton>
-                    </Tooltip>
-                  </ListItemIcon>
-                  <ListItemText primary={sm.name} primaryTypographyProps={{ variant: 'body2' }} />
-                </ListItem>
-              </Link>
-            ))}
-          </List>
+            </Tooltip>
+            <Divider />
+            <List>
+              <ListItem button>
+                <ListItemText
+                  primary={'Blog'}
+                  secondary={'My dev journey'}
+                  secondaryTypographyProps={{ variant: 'caption' }}
+                  primaryTypographyProps={{ variant: 'body1' }}
+                />
+              </ListItem>
+              <ListItem button>
+                <ListItemText
+                  primary={'Projects'}
+                  secondary={'Showcases are here'}
+                  secondaryTypographyProps={{ variant: 'caption' }}
+                  primaryTypographyProps={{ variant: 'body1' }}
+                />
+              </ListItem>
+              <ListItem button>
+                <ListItemText
+                  primary={'About me'}
+                  secondary={'Who am I?'}
+                  secondaryTypographyProps={{ variant: 'caption' }}
+                  primaryTypographyProps={{ variant: 'body1' }}
+                />
+              </ListItem>
+            </List>
+            <Divider className={styles.smDivider} />
+            <List>
+              <ListSubheader>
+                <Typography variant={'h6'}> {`Keep in touch`}</Typography>
+              </ListSubheader>
+              {[
+                { name: 'GitHub', link: githubUrl, icon: GitHubIcon },
+                { name: 'LinkedIn', link: linkedinUrl, icon: LinkedInIcon },
+                { name: 'Twitter', link: twitterUrl, icon: TwitterIcon },
+                { name: 'Resume', link: resumeUrl, icon: CloudDownloadIcon }
+              ].map((sm, i) => (
+                <Link
+                  color={'textPrimary'}
+                  key={i}
+                  rel={'noopener noreferrer'}
+                  href={sm.link}
+                  target={'_blank'}>
+                  <ListItem button>
+                    <ListItemIcon>
+                      <Tooltip title={sm.name} aria-label={sm.name}>
+                        <IconButton size={'small'} color="default">
+                          {<sm.icon />}
+                        </IconButton>
+                      </Tooltip>
+                    </ListItemIcon>
+                    <ListItemText primary={sm.name} primaryTypographyProps={{ variant: 'body1' }} />
+                  </ListItem>
+                </Link>
+              ))}
+            </List>
+          </Box>
         </Drawer>
       </AppBar>
     </>
