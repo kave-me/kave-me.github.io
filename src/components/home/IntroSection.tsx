@@ -4,16 +4,24 @@ import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles((theme) => ({
   sectionIntro: {
-    padding: theme.spacing(0, 4),
     display: 'flex',
-    flexDirection: 'row-reverse',
-    height: '91vh'
+    flexDirection: 'column',
+    height: '94vh',
+    justifyItems: 'stretch',
+    [theme.breakpoints.up('sm')]: {
+      flexDirection: 'row-reverse',
+      padding: theme.spacing(0, 4),
+      justifyContent: 'space-around'
+    }
   },
   sectionIntro_img: {
     display: 'flex',
-    maxWidth: '40%',
-    width: '500px',
-    alignSelf: 'center'
+    // maxWidth: '40%',
+    width: '90%',
+    alignSelf: 'center',
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '40%'
+    }
   },
   sectionIntro_p: {
     margin: theme.spacing(2, 0, 7, 0)
@@ -24,11 +32,21 @@ const useStyles = makeStyles((theme) => ({
     left: '50%',
     bottom: theme.spacing(10)
   },
-  sectionProjects: {},
   caption: {
+    display: 'flex',
+    flexDirection: 'column',
     alignSelf: 'center',
-    width: '600px',
-    maxWidth: '50%'
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '50%',
+      width: '600px'
+    }
+  },
+  button: {
+    alignSelf: 'center',
+    // height: '70px',
+    [theme.breakpoints.up('sm')]: {
+      alignSelf: 'start'
+    }
   },
   toolbar: {
     padding: theme.spacing(0, 8)
@@ -36,11 +54,19 @@ const useStyles = makeStyles((theme) => ({
   socialMediaIcon: {
     margin: theme.spacing(0, 1)
   },
-  logo: {
-    margin: theme.spacing(0, 'auto')
-  },
   menuIcon: {
     marginLeft: 'auto'
+  },
+  blobImage: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    top: 0,
+    right: 0,
+    objectFit: 'cover',
+
+    opacity: 0.3,
+    zIndex: -1
   }
 }));
 const IntroSection = () => {
@@ -48,6 +74,7 @@ const IntroSection = () => {
   return (
     <Box className={styles.sectionIntro}>
       {/* TODO: use next/image instead of raw img*/}
+      <img className={styles.blobImage} alt={'background shape'} src={'/img/blob.svg'} />
       <img className={styles.sectionIntro_img} alt="coding" src={'/img/coding.svg'} />
       <Box className={styles.caption}>
         <Typography variant={'h3'} component={'h1'}>
@@ -64,7 +91,7 @@ const IntroSection = () => {
           Web development is my art. Whether it’s preparing a complex web base game or a simple
           landing page, I always put my heart and soul into my work.
         </Typography>
-        <Button variant="contained" color="primary">
+        <Button className={styles.button} variant="contained" color="primary">
           More about me
         </Button>
       </Box>
