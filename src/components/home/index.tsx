@@ -41,10 +41,10 @@ export default function HomePage() {
         resumeUrl={data.bio.resume}
       />
       <IntroSection />
-      <ProjectSection />
-      <BlogSection />
-      <ContactSection />
-      <Footer />
+      {/*<ProjectSection />*/}
+      {/*<BlogSection />*/}
+      {/*<ContactSection />*/}
+      {/*<Footer />*/}
     </>
   );
 }
