@@ -4,20 +4,20 @@ import styles from './layout.module.css';
 import utilStyles from '../../styles/utils.module.css';
 import Link from 'next/link';
 
-const name = '[Your Name]';
-export const siteTitle = 'Next.js Sample Website';
+const name = 'Kave Mohammadi';
+export const siteTitle = 'Kave Mohammadi Blog Frontend developer React.js developer';
 
 export default function Layout({ children, home }: { children: React.ReactNode; home?: boolean }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="Learn how to build a personal website using Next.js" />
+        <meta name="description" content="I write about my journey as a developer " />
         <meta
           property="og:image"
           content={`https://og-image.vercel.app/${encodeURI(
             siteTitle
-          )}.png?useTheme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
+          )}.png?useTheme=dark&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -27,7 +27,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
           <>
             <Image
               priority
-              src="/images/profile.jpg"
+              src="/img/profile.jpg"
               className={utilStyles.borderCircle}
               height={144}
               width={144}
@@ -41,7 +41,7 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
               <a>
                 <Image
                   priority
-                  src="/images/profile.jpg"
+                  src={'/img/profile.jpg'}
                   className={utilStyles.borderCircle}
                   height={108}
                   width={108}
@@ -60,9 +60,10 @@ export default function Layout({ children, home }: { children: React.ReactNode; 
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
+          <Link href="/blog">
+            <a>← Back to Posts</a>
           </Link>
+          <br />
         </div>
       )}
     </div>
