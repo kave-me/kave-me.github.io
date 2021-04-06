@@ -1,6 +1,5 @@
 import {
   AppBar,
-  Drawer,
   IconButton,
   Link,
   makeStyles,
@@ -14,6 +13,7 @@ import {
   Divider,
   ListSubheader,
   Typography,
+  SwipeableDrawer
 } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -39,8 +39,8 @@ const useStyles = makeStyles((theme) => ({
   },
   smDivider: {
     marginTop: 'auto',
-    [theme.breakpoints.down('sm')]: {
-      width: '70vw'
+    [theme.breakpoints.only('xs')]: {
+      width: '80vw'
     }
   }
 }));
@@ -82,10 +82,11 @@ const Navbar = ({
           </Tooltip>
         </Toolbar>
 
-        <Drawer
+        <SwipeableDrawer
           className={styles.drawer}
           anchor={'right'}
           open={isDrawerOpen}
+          onOpen={toggleDrawer}
           onClose={toggleDrawer}>
           <Tooltip title="Toggle useTheme mode" aria-label="Theme mode">
             <Switch
@@ -153,7 +154,7 @@ const Navbar = ({
               </Link>
             ))}
           </List>
-        </Drawer>
+        </SwipeableDrawer>
       </AppBar>
     </>
   );
