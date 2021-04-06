@@ -1,6 +1,7 @@
 import { Box, makeStyles, Typography } from '@material-ui/core';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
+import NextLink from 'next/link';
 
 const useStyles = makeStyles((theme) => ({
   sectionIntro: {
@@ -17,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectionIntro_img: {
     display: 'flex',
-    // maxWidth: '40%',
-    width: '90%',
+    width: '100%',
     alignSelf: 'center',
     [theme.breakpoints.up('sm')]: {
       maxWidth: '40%'
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     alignSelf: 'center',
-    // height: '70px',
+    marginBottom: theme.spacing(0, 0, 10, 0),
     [theme.breakpoints.up('sm')]: {
       alignSelf: 'start'
     }
@@ -57,25 +57,32 @@ const useStyles = makeStyles((theme) => ({
   },
   menuIcon: {
     marginLeft: 'auto'
-  },
-  blobImage: {
-    position: 'absolute',
-    width: '100%',
-    height: '100%',
-    top: 0,
-    right: 0,
-    objectFit: 'cover',
-
-    opacity: 0.3,
-    zIndex: -1
   }
+  // blobImage: {
+  //   position: 'absolute',
+  //   width: 'max-content',
+  //   height: 'max-content',
+  //   top: 0,
+  //   right: 0,
+  //   objectFit: 'cover',
+  //
+  //   opacity: 0.3,
+  //   zIndex: -1
+  // }
 }));
+
+const ButtonLink = ({ className, href, hrefAs, children, prefetch }: any) => (
+  <NextLink href={href} as={hrefAs} prefetch>
+    <a className={className}>{children}</a>
+  </NextLink>
+);
+
 const IntroSection = () => {
   const styles = useStyles();
   return (
     <Box className={styles.sectionIntro}>
       {/* TODO: use next/image instead of raw img*/}
-      <img className={styles.blobImage} alt={'background shape'} src={'/img/blob.svg'} />
+      {/*<img className={styles.blobImage} alt={'background shape'} src={'/img/blob.svg'} />*/}
       <img className={styles.sectionIntro_img} alt="coding" src={'/img/coding.svg'} />
       <Box className={styles.caption}>
         <Typography variant={'h3'} component={'h1'}>
@@ -86,13 +93,19 @@ const IntroSection = () => {
           paragraph={true}
           variant={'body1'}
           component={'h2'}>
-          I am a web developer, I started doing web development since 2017 as a hobby but my career
-          as a developer started six month after that as a freelancer.
+          My name is Kave Mohammadi I'm a web developer, I started doing web development since 2017
+          as a hobby but nowadays I'm doing it as my career.
           <br />
           Web development is my art. Whether it’s preparing a complex web base game or a simple
           landing page, I always put my heart and soul into my work.
         </Typography>
-        <Button className={styles.button} variant="contained" color="primary">
+        <Button
+          component={ButtonLink}
+          href={'/about'}
+          className={styles.button}
+          variant="contained"
+          color="primary"
+          prefetch={true}>
           More about me
         </Button>
       </Box>
