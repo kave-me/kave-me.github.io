@@ -5,6 +5,8 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../src/components/date';
 import { GetStaticProps } from 'next';
+import GetHead from '../src/components/utils/GetHead';
+import { Typography } from '@material-ui/core';
 
 export default function Blog({
   allPostsData
@@ -17,15 +19,11 @@ export default function Blog({
 }) {
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
+      <GetHead keyWord={'blog'} />
       <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
+        <Typography variant={'h5'}>
+          This is a space for dialuge, lets make a conversation around tech and dev exploration 🚀
+        </Typography>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
