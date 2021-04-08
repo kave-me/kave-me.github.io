@@ -1,5 +1,5 @@
 ---
-title: 'Why "height: 100%" not working correctly??'
+title: 'Why "height: 100%" not working correctly?'
 date: '2021-04-09'
 ---
 
@@ -8,7 +8,7 @@ date: '2021-04-09'
 
 It happened a few time for me, at that point of time I didn't know by default the values of `heigth` is `auto` by default, which in most cases means stretch to fit the content, by the way if you are using a **percent** unit take a look at the parent element.
 
-a shorthand solution for some small projects of mine is to do the following at the top of your CSS.
+A shorthand solution for some small projects of mine is to do the following at the top of your CSS.
 ```css
 html,
 body {
