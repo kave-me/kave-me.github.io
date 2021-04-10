@@ -7,7 +7,11 @@ import Date from '../src/components/date';
 import { GetStaticProps } from 'next';
 import GetHead from '../src/components/utils/GetHead';
 import { Typography } from '@material-ui/core';
+import splitbee from '@splitbee/web';
 
+if (process.browser) {
+  setTimeout(() => splitbee.init(), 2 * 1000);
+}
 export default function Blog({
   allPostsData
 }: {

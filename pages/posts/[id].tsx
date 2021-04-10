@@ -4,7 +4,11 @@ import Head from 'next/head';
 import Date from '../../src/components/date';
 import utilStyles from '../../styles/utils.module.css';
 import { GetStaticProps, GetStaticPaths } from 'next';
+import splitbee from '@splitbee/web';
 
+if (process.browser) {
+  setTimeout(() => splitbee.init(), 2 * 1000);
+}
 export default function Post({
   postData
 }: {
