@@ -16,7 +16,8 @@ and third one is Image
 What is the meaning of **position** in `list-properties` context?
 
 It means where to put bullet points, read more on [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/list-style-position "MDN Web Docs")
-```css
+
+[comment]: <> (```css)
 list-style-position: inside;
 ```
 
